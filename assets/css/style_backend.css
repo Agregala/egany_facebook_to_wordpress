@@ -1,0 +1,24 @@
+/*!
+ * css for plugin: EGANY Facebook to WordPress importer 
+ * 
+ * @author: phong.nguyen 20150917 
+ * Copyright 2015 EGANY.com
+ * Licensed GNU v3.0 
+ */ 
+
+#fb2wp_page_group_fields .form-table{  
+    border-color: black;
+    border-bottom-style: dashed;  
+}
+
+.page_group_number
+,#fb2wp_page_group .highlight 
+{
+	color:red !important; 
+}
+.btn_panel {
+	padding: 10px 0px 10px 10px
+}
+
+
+
