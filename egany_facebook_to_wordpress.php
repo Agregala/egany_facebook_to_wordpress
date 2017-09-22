@@ -545,7 +545,8 @@ class Egany_FB_Group_To_WP {
 
         // Hardcode.20150401 choose API Version 2.3
         //$fb_url       = 'https://graph.facebook.com/' . $source_id . '/feed/?limit=' . $limit . '&access_token=' . $access_token;
-        $fb_url = 'https://graph.facebook.com/v2.3/' . $source_id . '/feed/?limit=' . $limit . '&access_token=' . $access_token ; // . '&page='.$page_num;
+        // #visualizar2017 cambio /feed/?limit=  por /posts/?limit=
+        $fb_url = 'https://graph.facebook.com/v2.3/' . $source_id . '/posts/?limit=' . $limit . '&access_token=' . $access_token ; // . '&page='.$page_num;
 		//https://graph.facebook.com/v2.3/$page_id/feed/?limit=250&access_token=$API|$SecretKey
 
         // build the query URL for next page
