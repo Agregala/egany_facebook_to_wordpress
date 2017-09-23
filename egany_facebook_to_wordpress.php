@@ -1553,10 +1553,11 @@ class Egany_FB_Group_To_WP {
 			if ( ! function_exists( 'wp_handle_upload' ) ) {
 				require_once( ABSPATH . 'wp-admin/includes/file.php' );
 			}
+            
 			$arrFileSubmit = array(
 				'name' => 'fb_image_tmp.jpg',
 				'tmp_name' => $str_local_filepath,
-				// 'size' => filesize($str_local_filepath) ,
+				'size' => filesize($str_local_filepath) ,
 				// 'type' => mime_content_type($str_local_filepath) ,
 
 			);
@@ -1572,6 +1573,9 @@ class Egany_FB_Group_To_WP {
 				return new WP_Error( 'upload_error', $file['error'] );
 			}
 			$str_local_filepath = $objHandleUp['file']; // $objHandleUp['url']...['type'];
+            if (!filesize($str_local_filepath)){
+                 return false;
+            }
 
 			$strContent = 'FB post id: ' . $fb_post->id
 				. '; Media ID: ' . $objAttach01->target->id
