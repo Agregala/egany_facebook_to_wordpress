@@ -546,7 +546,7 @@ class Egany_FB_Group_To_WP {
         // Hardcode.20150401 choose API Version 2.3
         //$fb_url       = 'https://graph.facebook.com/' . $source_id . '/feed/?limit=' . $limit . '&access_token=' . $access_token;
         // #visualizar2017 cambio /feed/?limit=  por /posts/?limit=
-        $fb_url = 'https://graph.facebook.com/v2.3/' . $source_id . '/posts/?limit=' . $limit . '&access_token=' . $access_token ; // . '&page='.$page_num;
+        $fb_url = 'https://graph.facebook.com/v2.10/' . $source_id . '/posts/?limit=' . $limit . '&access_token=' . $access_token ; // . '&page='.$page_num;
 		//https://graph.facebook.com/v2.3/$page_id/feed/?limit=250&access_token=$API|$SecretKey
 
         // build the query URL for next page
@@ -574,7 +574,7 @@ class Egany_FB_Group_To_WP {
         $group_posts = $decoded->data;
 
 		// phong.nguyen 20150430: get page_name + page_id. Ex: truyen-thong-123456...
-		$fb_url = 'https://graph.facebook.com/v2.3/' . $source_id . '/?access_token=' . $access_token;
+		$fb_url = 'https://graph.facebook.com/v2.10/' . $source_id . '/?access_token=' . $access_token;
         $json_posts  = $this->fetch_stream( $fb_url );
         $decoded     = json_decode( $json_posts );
         $page_group_info = $decoded;
@@ -609,7 +609,7 @@ class Egany_FB_Group_To_WP {
 			{
 				$fb_post_id = $post->id;
 				// get comment, attachment; old-link .../comments
-				$fb_url_comment = 'https://graph.facebook.com/v2.3/' . $fb_post_id . '/?fields=message,comments,attachments&access_token=' . $access_token;
+				$fb_url_comment = 'https://graph.facebook.com/v2.10/' . $fb_post_id . '/?fields=message,comments,attachments&access_token=' . $access_token;
 
 				$arr_comment_data = array();
 				$json_comments = $this->fetch_stream($fb_url_comment);
